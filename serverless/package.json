@@ -1,0 +1,19 @@
+{
+  "name": "identity-challenge-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "handler.js",
+  "dependencies": {
+    "uuid": "^3.3.2"
+  },
+  "devDependencies": {
+    "serverless-dynamodb-local": "^0.2.30",
+    "serverless-offline": "^3.25.6"
+  },
+  "scripts": {
+    "test": "",
+    "run": "serverless offline start --migrate true"
+  },
+  "author": "swilkinson09@gmail.com",
+  "license": "ISC"
+}
