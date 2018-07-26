@@ -17,7 +17,10 @@ const createUser = (internalIp, externalIp, callback) => {
       // console.log('Put Error: ' + error)
       callback(null, {
         statusCode: error.statusCode || 501,
-        headers: {'Content-Type': 'application/json'},
+        headers: {
+          'Content-Type': 'application/json',
+          'Access-Control-Allow-Origin': '*',  
+        },
         body: {
           'message': 'Cannot get user',
           'error': error
@@ -28,7 +31,10 @@ const createUser = (internalIp, externalIp, callback) => {
     // console.log('New User: {' + internalIp + ', ' + externalIp + ', ' + putParams.Item.userId + '}')
     const response = {
       statusCode: 200,
-      headers: {'Content-Type': 'application/json'},
+      headers: {
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*',
+        },
       body: JSON.stringify(putParams.Item)
     }
     callback(null, response)
@@ -37,7 +43,7 @@ const createUser = (internalIp, externalIp, callback) => {
 
 module.exports.getUserId = (event, context, callback) => {
   const externalIp = event.requestContext.identity.sourceIp || '0.0.0.0'
-  const internalIp = event.headers.internalIp || '0.0.0.0'
+  const internalIp = event.headers.internalip || '0.0.0.0'
   // console.log('External IP ' + externalIp)
   // console.log('Internal IP ' + internalIp)
   const params = {
@@ -53,7 +59,10 @@ module.exports.getUserId = (event, context, callback) => {
       // console.error(error)
       callback(null, {
         statusCode: error.statusCode || 501,
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 
+          'Content-Type': 'application/json',
+          'Access-Control-Allow-Origin': '*'
+        },
         body: {
           'message': 'Cannot get user',
           'error': error
@@ -65,7 +74,10 @@ module.exports.getUserId = (event, context, callback) => {
     if (result.Item) {
       const response = {
         statusCode: 200,
-        headers: {'Content-Type': 'application/json'},
+        headers: {
+          'Content-Type': 'application/json',
+          'Access-Control-Allow-Origin': '*',
+        },
         body:  JSON.stringify(result.Item)
       }
       callback(null, response)

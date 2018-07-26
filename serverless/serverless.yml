@@ -69,6 +69,10 @@ functions:
       - http:
           path: get-user
           method: GET
+          cors:
+            origin: '*'
+            headers:
+              - InternalIp
   
 
 #    The following are a few example events you can configure
