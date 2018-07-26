@@ -1,4 +1,4 @@
-'use strict';
+'use strict'
 const uuid = require('uuid')
 const dynamoDb = require('./dynamodb')
 
@@ -34,7 +34,7 @@ const createUser = (internalIp, externalIp, callback) => {
       headers: {
         'Content-Type': 'application/json',
         'Access-Control-Allow-Origin': '*',
-        },
+      },
       body: JSON.stringify(putParams.Item)
     }
     callback(null, response)
