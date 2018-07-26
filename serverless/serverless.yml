@@ -43,6 +43,12 @@ provider:
 #            - "Ref" : "ServerlessDeploymentBucket"
 #            - "/*"
 
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - dynamodb:GetItem
+        - dynamodb:PutItem
+      Resource: "arn:aws:dynamodb:${self:provider.region}:*:table/${self:provider.environment.DYNAMODB_TABLE}"
 # you can define service wide environment variables here
 #  environment:
 #    variable1: value1
@@ -116,11 +122,15 @@ resources:
       Properties:
         TableName: ${self:provider.environment.DYNAMODB_TABLE}
         AttributeDefinitions:
-          - AttributeName: userId
+          - AttributeName: extIp
+            AttributeType: S
+          - AttributeName: intIp
             AttributeType: S
         KeySchema:
-          - AttributeName: userId
+          - AttributeName: extIp
             KeyType: HASH
+          - AttributeName: intIp
+            KeyType: RANGE
         ProvisionedThroughput:
           ReadCapacityUnits: 1
           WriteCapacityUnits: 1

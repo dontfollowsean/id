@@ -12,7 +12,7 @@
   },
   "scripts": {
     "test": "",
-    "run": "serverless offline start --migrate true"
+    "start": "serverless offline start --migrate true"
   },
   "author": "swilkinson09@gmail.com",
   "license": "ISC"
