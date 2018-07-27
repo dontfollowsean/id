@@ -1,0 +1,45 @@
+html {
+    background-color: darkgrey
+}
+
+body,html {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+.container {
+    padding: 10rem
+}
+
+.row {
+    display: flex;
+    flex: 1;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.info {
+    border: .4rem solid white;
+    border-radius: .5rem;
+    margin: 1rem;
+    font-size: 1.5rem;
+    padding: 1rem;
+    text-align: center;
+    color: white;
+    background: rgba(0,0,0,0.7);
+    text-shadow: 0 0 .5rem black;
+}
+
+.item {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-style: italic;
+    font-size: 1.2rem;
+}
