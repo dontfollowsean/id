@@ -1,7 +1,11 @@
 {
   "name": "identity-challenge-api",
   "version": "1.0.0",
-  "description": "",
+  "description": "Serverless Application that assigns a unique ID to any device that hits a web page.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dontfollowsean/identity-challenge.git"
+  },
   "main": "handler.js",
   "dependencies": {
     "uuid": "^3.3.2"
