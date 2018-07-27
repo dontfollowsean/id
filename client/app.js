@@ -19,7 +19,7 @@ const fetchUser = function(localIp) {
     const userIdDiv = document.getElementById('userId')
     const localIpDiv = document.getElementById('localIp')
     const externalIpDiv = document.getElementById('externalIp')
-    const getUserEndpoint =  'https://bbfxkdjx5j.execute-api.us-east-1.amazonaws.com/dev/get-user'
+    const getUserEndpoint =  'https://xn5sj7q118.execute-api.us-east-1.amazonaws.com/prod/get-user'
     const requestInit = {
         method: 'GET',
         headers: {
