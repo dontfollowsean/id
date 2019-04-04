@@ -9,7 +9,8 @@ const createUser = (internalIp, externalIp, callback) => {
     Item: {
       userId: uuid.v1(),
       extIp: externalIp,
-      intIp: internalIp
+      intIp: internalIp,
+      timestamp: new Date().toISOString()
     }
   }
   dynamoDb.put(putParams, (error) => {
