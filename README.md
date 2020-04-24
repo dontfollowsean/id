@@ -2,7 +2,7 @@
 
 Serverless Application that assigns a unique ID to any device that hits a web page. The user can restart the browser, clear cookies, clear the cache, or even switch browsers on the device and the ID will remain the same. This is done by recording the combination of the local and external IP addresses.
 
-Try it out [here](https://www.seanewilkinson.com/identity-challenge).
+Try it out [here](https://www.seanewilkinson.com/id).
 
 Finding a user's Local IP address uses the [WebRTC API](https://developer.mozilla.org/en-US/docs/Web/API/WebRTC_API):
 
